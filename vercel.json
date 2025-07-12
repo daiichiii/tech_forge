@@ -1,9 +1,8 @@
 {
   "version": 2,
-  "name": "tech-forge",
   "builds": [
     {
-      "src": "app/src/**/*",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "buildCommand": "npm run build",
@@ -12,7 +11,10 @@
     },
     {
       "src": "config.ru",
-      "use": "@vercel/ruby"
+      "use": "@vercel/ruby",
+      "config": {
+        "bundleInstall": true
+      }
     }
   ],
   "routes": [
