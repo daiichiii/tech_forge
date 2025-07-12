@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "name": "tech-forge",
+  "builds": [
+    {
+      "src": "app/src/**/*",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npm run build",
+        "outputDirectory": "app/dist"
+      }
+    },
+    {
+      "src": "config.ru",
+      "use": "@vercel/ruby"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/config.ru"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/app/dist/$1"
+    }
+  ],
+  "env": {
+    "RAILS_ENV": "production"
+  }
+}

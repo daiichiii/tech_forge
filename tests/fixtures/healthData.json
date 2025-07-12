@@ -1,0 +1,14 @@
+{
+  "healthy": {
+    "status": "ok",
+    "timestamp": "2025-07-05T06:00:00.000Z",
+    "environment": "test",
+    "version": "1.0.0"
+  },
+  "unhealthy": {
+    "status": "error",
+    "timestamp": "2025-07-05T06:00:00.000Z",
+    "environment": "test",
+    "version": "1.0.0"
+  }
+}
