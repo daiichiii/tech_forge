@@ -5,6 +5,9 @@ RUN apt-get update -qq && apt-get install -y \
   nodejs \
   npm \
   default-mysql-client \
+  libmariadb-dev \
+  libyaml-dev \
+  build-essential \
   && rm -rf /var/lib/apt/lists/*
 
 # 作業ディレクトリを設定
