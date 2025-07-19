@@ -5,9 +5,11 @@ RUN apt-get update -qq && apt-get install -y \
   nodejs \
   npm \
   libpq-dev \
+  postgresql-client \
   libyaml-dev \
   pkg-config \
   build-essential \
+  libyaml-0-2 \
   && rm -rf /var/lib/apt/lists/*
 
 # 作業ディレクトリを設定
