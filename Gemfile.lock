@@ -91,6 +91,10 @@ GEM
     debug (1.11.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    dotenv (3.1.8)
+    dotenv-rails (3.1.8)
+      dotenv (= 3.1.8)
+      railties (>= 6.1)
     drb (2.2.3)
     erb (5.0.1)
     erubi (1.13.1)
@@ -117,7 +121,6 @@ GEM
     minitest (5.25.5)
     msgpack (1.8.0)
     mutex_m (0.3.0)
-    mysql2 (0.5.6)
     net-imap (0.5.9)
       date
       net-protocol
@@ -144,6 +147,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.8-x86_64-linux-musl)
       racc (~> 1.4)
+    pg (1.5.9)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -224,14 +228,15 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
-  mysql2 (~> 0.5)
+  dotenv-rails
+  pg (~> 1.1)
   puma (~> 6.0)
   rack-cors
   rails (~> 7.1.5, >= 7.1.5.1)
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.2.4p170
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.6.9

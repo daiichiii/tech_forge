@@ -1,26 +1,27 @@
-# MySQL. Versions 5.5.8 and up are supported.
+# PostgreSQL. Versions 9.3 and up are supported.
 #
-# Install the MySQL driver
-#   gem install mysql2
+# Install the pg driver:
+#   gem install pg
+# On macOS with Homebrew:
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On macOS with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
 #
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem "mysql2"
-#
-# And be sure to use new-style password hashing:
-#   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
+# Configure Using Gemfile
+# gem "pg"
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch("MYSQL_USER") { "tech_forge_user" } %>
-  password: <%= ENV.fetch("MYSQL_PASSWORD") { "tech_forge_password" } %>
-  host: <%= ENV.fetch("MYSQL_HOST") { "db" } %>
-  port: <%= ENV.fetch("MYSQL_PORT") { 3306 } %>
 
 development:
   <<: *default
-  database: tech_forge_development
+  url: <%= ENV["DATABASE_URL"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -50,7 +51,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: tech_forge_production
-  username: tech_forge
-  password: <%= ENV["TECH_FORGE_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>

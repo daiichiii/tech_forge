@@ -23,10 +23,12 @@ coverage/
 
 # 環境変数・設定ファイル
 .env
+.env.*
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.vercel
 .figmarc
 
 # IDEファイル
