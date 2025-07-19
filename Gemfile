@@ -46,3 +46,6 @@ group :development do
   # gem "spring"
 end
 
+# Explicitly add webrick for compatibility
+gem "webrick"
+
