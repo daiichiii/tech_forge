@@ -1,4 +1,4 @@
-FROM ruby:3.3.0
+FROM ruby:3.3.1
 
 # 必要なパッケージをインストール
 RUN apt-get update -qq && apt-get install -y \
@@ -6,6 +6,7 @@ RUN apt-get update -qq && apt-get install -y \
   npm \
   libpq-dev \
   libyaml-dev \
+  pkg-config \
   build-essential \
   && rm -rf /var/lib/apt/lists/*
 
