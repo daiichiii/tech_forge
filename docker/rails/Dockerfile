@@ -4,8 +4,7 @@ FROM ruby:3.3.0
 RUN apt-get update -qq && apt-get install -y \
   nodejs \
   npm \
-  default-mysql-client \
-  libmariadb-dev \
+  libpq-dev \
   libyaml-dev \
   build-essential \
   && rm -rf /var/lib/apt/lists/*
